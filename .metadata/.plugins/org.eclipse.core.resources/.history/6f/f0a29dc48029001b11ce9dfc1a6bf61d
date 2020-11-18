@@ -1,0 +1,68 @@
+package com.zensar.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.zensar.entites.Student;
+
+@RestController
+public class StudentController {
+	
+	private List<Student> students=new ArrayList<Student>();
+	
+	
+	
+	
+	public StudentController() {
+		students.add(new Student(1001, "Ram", 30));
+		students.add(new Student(1002, "Seeta", 28));
+		students.add(new Student(1003, "Laxman", 26));
+	}
+
+
+	// http://localhost:8080/students
+
+   @GetMapping("/students")
+    //@RequestMapping(value = "/students")
+	public List<Student> getAllStudents(){
+    	System.out.println("inside getAllStudents");
+		return students;
+	}
+    
+    // http://localhost:8080/{studentId}
+   /* @GetMapping("/students/{studentId}")
+    public Student getStudent(@PathVariable("studentId") int studentId) {
+    	for(Student student:students) {
+    		if(student.getStudentId()==studentId) {
+    			return student;
+    		}
+    	}
+    	
+    	return null;
+    }
+    
+    @PostMapping("/students")
+    public boolean insertStudent(@RequestBody Student student) {
+    	return students.add(student);
+    }*/
+    
+
+}
+
+
+
+
+
+
+
+
+
+
