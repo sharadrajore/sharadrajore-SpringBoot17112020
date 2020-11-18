@@ -1,6 +1,7 @@
 package com.zensar.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,29 +25,28 @@ public class StudentController {
 
 	
 	// http://localhost:8080/students
-
 	@GetMapping("/students")
 	// @RequestMapping(value = "/students")
-	public List<Student> getAllStudents() {
+	public Iterable<Student> getAllStudents() {
 		return service.getAllStudents();
 	}
 
 	// http://localhost:8080/{studentId}
 	@GetMapping("/students/{studentId}")
-	public Student getStudent(@PathVariable("studentId") int studentId) {
+	public Optional<Student> getStudent(@PathVariable("studentId") int studentId) {
 		return service.getStudent(studentId);
 	}
 
 	@PostMapping("/students")
-	public boolean insertStudent(@RequestBody Student student) {
+	public Student insertStudent(@RequestBody Student student) {
 		return service.insertStudent(student);
 	}
 	
 	
 	@DeleteMapping("/students/{studentId}")
-	public boolean deleteStudent(@PathVariable int studentId) {
+	public void deleteStudent(@PathVariable int studentId) {
 		
-		return service.deleteStudent(studentId);
+		 service.deleteStudent(studentId);
 		
 	}
 	

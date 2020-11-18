@@ -1,0 +1,59 @@
+package com.zensar.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.zensar.entites.Student;
+import com.zensar.services.StudentService;
+
+@RestController
+public class StudentController {
+	
+	@Autowired
+	private StudentService service;
+	
+	// CRUD -> Created,Read,updated,delete
+
+	
+	// http://localhost:8080/students
+
+	@GetMapping("/students")
+	// @RequestMapping(value = "/students")
+	public Iterable<Student> getAllStudents() {
+		return service.getAllStudents();
+	}
+
+	// http://localhost:8080/{studentId}
+	@GetMapping("/students/{studentId}")
+	public Student getStudent(@PathVariable("studentId") int studentId) {
+		return service.getStudent(studentId);
+	}
+
+	@PostMapping("/students")
+	public boolean insertStudent(@RequestBody Student student) {
+		return service.insertStudent(student);
+	}
+	
+	
+	@DeleteMapping("/students/{studentId}")
+	public boolean deleteStudent(@PathVariable int studentId) {
+		
+		return service.deleteStudent(studentId);
+		
+	}
+	
+	// updating student object
+	@PatchMapping("/students/{studentId}")
+	public Student updateStudent(@PathVariable("studentId")int studentId,@RequestBody Student updatedStudent) {
+		return service.updateStudent(studentId,updatedStudent);
+	}
+
+}

@@ -1,15 +1,11 @@
 package com.zensar.services;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.zensar.entites.Student;
@@ -22,32 +18,31 @@ public class StudentServiceImpl implements StudentService {
 	private StudentRepository repository;
 	
 		// @RequestMapping(value = "/students")
-		public List<Student> getAllStudents() {
-			return repository.getAllStudents();
+		public Iterable<Student> getAllStudents() {
+			return repository.findAll();
 		}
 
 		// http://localhost:8080/{studentId}
 		
-		public Student getStudent(int studentId) {
-			
-			return repository.getStudent(studentId);
+		public Optional<Student> getStudent(int studentId) {
+			return repository.findById(studentId);
 		}
 
 		
-		public boolean insertStudent(@RequestBody Student student) {
-			return repository.insertStudent(student);
+		public Student insertStudent(@RequestBody Student student) {
+			return repository.save(student);
 		}
 		
 		
 	
-		public boolean deleteStudent(@PathVariable int studentId) {
-			return repository.deleteStudent(studentId);
+		public void deleteStudent(@PathVariable int studentId) {
+			 repository.deleteById(studentId);
 		}
 		
 		// updating student object
 		@PatchMapping("/students/{studentId}")
 		public Student updateStudent(@PathVariable("studentId")int studentId,@RequestBody Student updatedStudent) {
-			return repository.updateStudent(studentId, updatedStudent);
+			return repository.save(updatedStudent);
 		}
 
 }

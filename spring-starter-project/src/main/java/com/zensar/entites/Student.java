@@ -1,7 +1,11 @@
 package com.zensar.entites;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
-	
+	@Id
 	private int studentId;
 	private String studentName;
 	private int studentAge;
