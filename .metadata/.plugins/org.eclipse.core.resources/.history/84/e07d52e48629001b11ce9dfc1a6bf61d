@@ -1,0 +1,14 @@
+package com.zensar.services;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.zensar.entites.Student;
+
+public interface StudentService {
+	
+	public List<Student> getAllStudents();
+	public Student getStudent(int studentId);
+
+}

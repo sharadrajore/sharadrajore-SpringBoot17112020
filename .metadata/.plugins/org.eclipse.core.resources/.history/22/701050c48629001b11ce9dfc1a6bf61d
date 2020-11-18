@@ -1,0 +1,11 @@
+package com.zensar.services;
+
+import java.util.List;
+
+import com.zensar.entites.Student;
+
+public interface StudentService {
+	
+	public List<Student> getAllStudents();
+
+}
