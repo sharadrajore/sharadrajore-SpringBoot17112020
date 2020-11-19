@@ -26,7 +26,7 @@ public class SpringStarterProjectApplication  implements CommandLineRunner{
 		Student student2=new Student("Rohini",30);
 		
 		controller.insertStudent(student1);
-		controller.insertStudent(student2);
+		controller.insertStudent(student2)
 	}
 	
 	

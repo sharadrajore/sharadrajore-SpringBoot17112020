@@ -6,7 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.zensar.controllers.StudentController;
-import com.zensar.entites.Student;
 
 @SpringBootApplication
 public class SpringStarterProjectApplication  implements CommandLineRunner{
@@ -22,11 +21,8 @@ public class SpringStarterProjectApplication  implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Student student1=new Student("Rakesh",40);
-		Student student2=new Student("Rohini",30);
 		
-		controller.insertStudent(student1);
-		controller.insertStudent(student2);
+		System.out.println(controller);
 	}
 	
 	

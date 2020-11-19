@@ -1,0 +1,23 @@
+package com.zensar;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.zensar.controllers.StudentController;
+
+@SpringBootApplication
+public class SpringStarterProjectApplication {
+	
+
+	@Autowired
+	static StudentController controller;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(SpringStarterProjectApplication.class, args);
+		System.out.println(controller);
+	}
+	
+	
+
+}

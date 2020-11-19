@@ -3,15 +3,11 @@
 
 spring.datasource.url=jdbc:mysql://localhost:3306/studentdb
 
-spring.jpa.properties.hibernate.format_sql=true
-
 #spring.datasource.url=jdbc:mysql://mydb.cyykweipugud.ap-south-1.rds.amazonaws.com:3306/studentdb
 
-spring.jpa.hibernate.ddl-auto=create
+spring.jpa.hibernate.ddl-auto=update
 
 spring.jpa.show-sql=true
-
-spring.jpa.format_sql=true
 
 spring.datasource.username=root
 
