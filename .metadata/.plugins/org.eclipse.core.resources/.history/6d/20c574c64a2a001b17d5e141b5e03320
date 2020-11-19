@@ -1,0 +1,10 @@
+#spring.datasource.url=jdbc:h2:mem:studentdb
+
+
+spring.datasource.url=jdbc:mysql://localhost:3306/studentdb
+
+spring.datasource.username=root
+
+spring.datasource.password=root
+
+#spring.h2.console.path=/h2

@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\SpringBoot17112020\first-spring-boot-manual-way\src\main\java\com\zensar\App.java"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -25,13 +26,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.zensar"/>
 		</list>
 		<list key="groupId">
-			<item value="com.zensar"/>
 		</list>
 		<list key="artifactId">
-			<item value="first-spring-boot-manual-way"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

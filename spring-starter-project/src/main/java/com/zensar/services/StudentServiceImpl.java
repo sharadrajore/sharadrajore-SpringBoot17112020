@@ -29,19 +29,19 @@ public class StudentServiceImpl implements StudentService {
 		}
 
 		
-		public Student insertStudent(@RequestBody Student student) {
+		public Student insertStudent(Student student) {
 			return repository.save(student);
 		}
 		
 		
 	
-		public void deleteStudent(@PathVariable int studentId) {
+		public void deleteStudent(int studentId) {
 			 repository.deleteById(studentId);
 		}
 		
 		// updating student object
 		@PatchMapping("/students/{studentId}")
-		public Student updateStudent(@PathVariable("studentId")int studentId,@RequestBody Student updatedStudent) {
+		public Student updateStudent(int studentId,Student updatedStudent) {
 			return repository.save(updatedStudent);
 		}
 
