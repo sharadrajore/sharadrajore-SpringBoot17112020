@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.zensar.entites.Student;
 import com.zensar.services.StudentService;
 
-@RestController
+@RestController(value = "student")
 @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE},consumes = {
 		MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE
 })
